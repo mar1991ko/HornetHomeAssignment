@@ -13,6 +13,10 @@ class InventoryPage {
     veriyRemoveButtonIsVisible() {
         cy.get(iel.addToCart).should('be.visible').and('have.text', 'Remove');
     }
+
+    getOnesieImage() {
+        return cy.get(iel.onesieImage);
+    }
 }
 
 export default new InventoryPage();
