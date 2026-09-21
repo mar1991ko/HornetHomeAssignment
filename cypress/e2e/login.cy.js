@@ -6,9 +6,14 @@ describe('Login', () => {
         LoginPage.openLoginPage()
     })
 
-    it('Login with Credentials', () => {
-        LoginPage.fillCredentials()
+    it('Login with Standard User Credentials', () => {
+        LoginPage.fillStandardUserCredentials()
         InventoryPage.validateInventoryPage()
+    })
+
+    it('Login with Locked User Credentials', () => {
+        LoginPage.fillLockedUserCredentials()
+        LoginPage.validateLockedUserErrorMessage()
     })
 
 })
