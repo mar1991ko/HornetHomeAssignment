@@ -16,4 +16,9 @@ describe('Login', () => {
         LoginPage.validateLockedUserErrorMessage()
     })
 
+        it('Check Onesie Image', () => {
+            LoginPage.fillProblemUserCredentials()
+            expect(InventoryPage.getOnesieImage()).to.exist
+        })
+
 })
