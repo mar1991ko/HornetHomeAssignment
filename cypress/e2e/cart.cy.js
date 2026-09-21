@@ -5,16 +5,23 @@ import CartPage from '../pages/cart/cartPage';
 
 describe('Cart', () => {
     beforeEach(() => {
-        LoginPage.openLoginPage()
-        LoginPage.fillCredentials()
+        LoginPage.openLoginPage()        
     })
 
     it('Add Product to Cart', () => {
+        LoginPage.fillStandardUserCredentials()
         InventoryPage.addProductToCart('Sauce Labs Backpack')
         const cartItems = 1;
         HeaderPage.verifyCartItems(cartItems)
-        InventoryPage.veriyRemoveButtonIsVisible()
+        InventoryPage.verifyRemoveButtonIsVisible()
         HeaderPage.openCartPage()
         CartPage.validateCartProducts('Sauce Labs Backpack')
+    })
+
+    it('Add Fleece Jacket to Cart', () => {
+        LoginPage.fillErrorUserCredentials()
+        InventoryPage.addProductToCart('Sauce Labs Fleece Jacket')
+        const cartItems = 1;
+        HeaderPage.verifyCartItems(cartItems)
     })
 })
