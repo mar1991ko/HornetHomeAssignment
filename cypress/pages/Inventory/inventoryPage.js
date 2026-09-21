@@ -10,8 +10,8 @@ class InventoryPage {
         cy.get(iel.addToCart(itemName)).click();
     }
 
-    veriyRemoveButtonIsVisible() {
-        cy.get(iel.addToCart).should('be.visible').and('have.text', 'Remove');
+    verifyRemoveButtonIsVisible() {
+        cy.get(iel.removeButton).should('be.visible').and('have.text', 'Remove');
     }
 
     getOnesieImage() {
