@@ -1,4 +1,5 @@
 import { loginElements as el } from "./loginElements" 
+import credentials from "../../../credentials.json"
 
 class LoginPage {
 
@@ -7,26 +8,26 @@ class LoginPage {
     }
 
     fillStandardUserCredentials() {
-    cy.get(el.username).type('standard_user')
-    cy.get(el.password).type('secret_sauce')
+    cy.get(el.username).type(credentials.standardUser)
+    cy.get(el.password).type((credentials.password),{log: false})
     cy.get(el.loginButton).click()
     }
 
     fillLockedUserCredentials() {
-    cy.get(el.username).type('locked_user')
-    cy.get(el.password).type('secret_sauce')
+    cy.get(el.username).type(credentials.lockedUser)
+    cy.get(el.password).type((credentials.password),{log: false})
     cy.get(el.loginButton).click()
     }
 
     fillProblemUserCredentials() {
-    cy.get(el.username).type('problem_user')
-    cy.get(el.password).type('secret_sauce')
+    cy.get(el.username).type(credentials.problemUser)
+    cy.get(el.password).type((credentials.password),{log: false})
     cy.get(el.loginButton).click()
     }
 
     fillErrorUserCredentials() {
-    cy.get(el.username).type('error_user')
-    cy.get(el.password).type('secret_sauce')
+    cy.get(el.username).type(credentials.errorUser)
+    cy.get(el.password).type((credentials.password),{log: false})
     cy.get(el.loginButton).click()
     }
 
