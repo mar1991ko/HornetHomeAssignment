@@ -7,20 +7,6 @@ class LoginPage {
         cy.visit("https://www.saucedemo.com/");
     }
 
-    /*fillStandardUserCredentials() {
-    cy.get(el.username).type('standard_user')
-    cy.get(el.password).type('secret_sauce')
-    cy.get(el.loginButton).click()
-    }*/
-
-    /*fillStandardUserCredentials() {
-        cy.env(['standardUser', 'password']).then(({standardUser, password}) => {
-    cy.get(el.username).type(standardUser)
-    cy.get(el.password).type((password),{log: false})
-    cy.get(el.loginButton).click()
-    })
-    }*/
-
     fillStandardUserCredentials() {
     cy.get(el.username).type(credentials.standardUser)
     cy.get(el.password).type((credentials.password),{log: false})
@@ -28,20 +14,20 @@ class LoginPage {
     }
 
     fillLockedUserCredentials() {
-    cy.get(el.username).type('locked_user')
-    cy.get(el.password).type('secret_sauce')
+    cy.get(el.username).type(credentials.lockedUser)
+    cy.get(el.password).type((credentials.password),{log: false})
     cy.get(el.loginButton).click()
     }
 
     fillProblemUserCredentials() {
-    cy.get(el.username).type('problem_user')
-    cy.get(el.password).type('secret_sauce')
+    cy.get(el.username).type(credentials.problemUser)
+    cy.get(el.password).type((credentials.password),{log: false})
     cy.get(el.loginButton).click()
     }
 
     fillErrorUserCredentials() {
-    cy.get(el.username).type('error_user')
-    cy.get(el.password).type('secret_sauce')
+    cy.get(el.username).type(credentials.errorUser)
+    cy.get(el.password).type((credentials.password),{log: false})
     cy.get(el.loginButton).click()
     }
 
