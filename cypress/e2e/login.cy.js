@@ -7,7 +7,7 @@ describe('Login', () => {
     })
 
     it('Login with Standard User Credentials', () => {
-        LoginPage.fillStandardUserCredentials()
+        LoginPage.fillStandardUserCredentials(),{log: false}
         InventoryPage.validateInventoryPage()
     })
 
